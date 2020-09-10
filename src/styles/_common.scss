@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  align-items: center;
+}
+
+.text {
+  color: var(--primary-text);
+  border-bottom: 2px solid grey;
+}
+
+.btn {
+  border: 0;
+  transition: color 0.3s ease;
+  font-size: 1.2em;
+}
+
+.circle-btn {
+  @extend .btn;
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+}

@@ -1,0 +1,41 @@
+// global colors
+:root {
+  --primary-text: #424242;
+  --primary-grey: #d4d4d4;
+  --primary-dark-grey: #929292;
+  --light-red: #ff8585;
+  --light-green: #8bc34a;
+  --modal-background: rgba(0, 0, 0, 0.4);
+  --primary-blue: #5762a5;
+}
+// globals base class styles
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+button,
+a {
+  cursor: pointer;
+}
+input:focus,
+button:focus {
+  outline: 0;
+  box-shadow: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+progress {
+  width: 100%;
+}
+// import internal modules
+@import "./common";
+@import "./contacts";
+@import "./card";
+@import "./modal";
+@import "./form";

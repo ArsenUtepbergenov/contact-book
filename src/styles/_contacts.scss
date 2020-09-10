@@ -1,0 +1,10 @@
+.contacts-controls {
+  &__btn-add-new {
+    @extend .circle-btn;
+    background: var(--primary-grey);
+    color: var(--primary-dark-grey);
+  }
+  &__btn-add-new:hover {
+    color: darken(#929292, 20%);
+  }
+}
