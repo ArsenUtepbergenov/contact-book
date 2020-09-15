@@ -1,8 +1,15 @@
-.container {
+.column {
   display: flex;
   flex-direction: column;
   margin: 1em;
   align-items: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
 }
 
 .text {
@@ -10,9 +17,14 @@
   border-bottom: 2px solid grey;
 }
 
+.text-center {
+  align-self: center;
+  text-align: center;
+  justify-self: center;
+}
+
 .btn {
   border: 0;
-  transition: color 0.3s ease;
   font-size: 1.2em;
 }
 

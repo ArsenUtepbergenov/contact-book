@@ -47,6 +47,7 @@ async function createContact (data) {
   try {
     const docRef = await db.collection('contacts').add(data)
     console.log(`The contact with id ${docRef.id}, successfully created!`)
+    return docRef.id
   } catch (error) {
     console.error(`Error: cannot create the contact with data - ${data}: `, error)
   }

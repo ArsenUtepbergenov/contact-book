@@ -1,5 +1,5 @@
 <template>
-  <section class="home">
+  <section class="contacts">
     <Modal v-if="showModal" @close="toggleModal">
       <template #body>
         <CreateUpdateForm
@@ -7,7 +7,7 @@
           textSubmitButton="Create contact" />
       </template>
     </Modal>
-    <div class="container">
+    <div class="column">
       <div class="contacts-controls">
         <button type="button" class="contacts-controls__btn-add-new" @click="toggleModal">
           <i class="fas fa-user-plus"></i>
@@ -16,8 +16,10 @@
       <h3 class="text">
         List of your contacts:
       </h3>
-      <div v-for="contact in contacts" :key="contact.id">
-        <Card :data="contact" />
+      <div class="row">
+        <div v-for="contact in contacts" :key="contact.id">
+          <Card :data="contact" @deleteContact="deleteContact" />
+        </div>
       </div>
     </div>
   </section>
@@ -30,7 +32,7 @@ import Modal from '../components/Modal'
 import CreateUpdateForm from '../components/CreateUpdateForm'
 
 export default {
-  name: 'Home',
+  name: 'Contacts',
   data () {
     return {
       contacts: [],
@@ -44,8 +46,13 @@ export default {
     toggleModal () {
       this.showModal = !this.showModal
     },
-    createContact (newData) {
-      createContact(newData)
+    async createContact (newData) {
+      const newId = await createContact(newData)
+      this.contacts.unshift({ ...newData, id: newId })
+    },
+    deleteContact (id) {
+      const index = this.contacts.findIndex(contact => contact.id === id)
+      this.contacts.splice(index, 1)
     }
   },
   components: {

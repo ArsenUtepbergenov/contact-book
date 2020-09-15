@@ -2,6 +2,8 @@
 :root {
   --primary-text: #424242;
   --primary-grey: #d4d4d4;
+  --primary-red: #f44336;
+  --primary-green: #4caf50;
   --primary-dark-grey: #929292;
   --light-red: #ff8585;
   --light-green: #8bc34a;
@@ -20,6 +22,7 @@ html, body {
 button,
 a {
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 input:focus,
 button:focus {

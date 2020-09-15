@@ -23,3 +23,8 @@ export function compareObjects (first, second) {
 
   return true
 }
+
+// is empty simple object
+export function isEmpty (object) {
+  return Object.keys(object).length === 0 && object.constructor === Object
+}
