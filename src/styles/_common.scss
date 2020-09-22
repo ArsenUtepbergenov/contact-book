@@ -1,3 +1,12 @@
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+.box {
+  box-shadow: 0px 0px 3px 2px var(--primary-grey);
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -9,7 +18,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: 1140px;
 }
 
 .text {

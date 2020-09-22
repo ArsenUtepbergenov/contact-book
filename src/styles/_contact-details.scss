@@ -1,8 +1,14 @@
 .contact-details {
-  .card {
+  &__content {
+    width: 100%;
     display: flex;
-    max-width: 1000px;
-    width: 1000px;
+    margin: 20px auto;
+  }
+  .btn-back {
+    background: none;
+    align-self: flex-start;
+    padding: 0;
+    color: var(--primary-green);
   }
   &__avatar {
     width: 280px;

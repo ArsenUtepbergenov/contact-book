@@ -36,6 +36,9 @@ img {
 progress {
   width: 100%;
 }
+mark {
+  text-transform: capitalize;
+}
 // import internal modules
 @import "./common";
 @import "./contacts";

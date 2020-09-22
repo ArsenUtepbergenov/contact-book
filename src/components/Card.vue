@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card box">
     <Modal v-if="showModal" @close="toggleModal">
       <template #body>
         <div class="text-center" v-html="`<strong>Are you sure you want to delete the <mark>${data.name}</mark>?</strong>`"></div>
@@ -21,6 +21,7 @@
       <div class="card__body">
         <span class="card__title">{{data.name}}</span>
         <span class="card__info">{{data.phone}}</span>
+        <span class="card__info">{{data.email}}</span>
       </div>
     </router-link>
     <div class="card__footer">

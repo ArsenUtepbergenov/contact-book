@@ -3,15 +3,20 @@
 <template>
   <section v-if="isReady" class="contact-details">
     <div class="container">
-      <div class="card">
-        <div class="contact-details__avatar">
-          <h2>{{contact.name}}</h2>
-          <img :src="contact.avatar" :alt="contact.name">
-        </div>
-        <div class="contact-details__info">
-          <p><b>Phone:</b> {{contact.phone}}</p>
-          <p><b>Email:</b> {{contact.email}}</p>
-          <p><b>About:</b> {{contact.about}}</p>
+      <div class="column">
+        <button type="button" class="btn btn-back" @click="() => this.$router.go('-1')">
+          <i class="fas fa-arrow-circle-left fa-3x"></i>
+        </button>
+        <div class="contact-details__content box">
+          <div class="contact-details__avatar">
+            <h2>{{contact.name}}</h2>
+            <img v-if="contact.avatar" :src="contact.avatar" :alt="contact.name">
+            <img v-else src="https://via.placeholder.com/720?text=Avatar" :alt="contact.name">
+          </div>
+          <div class="contact-details__info">
+            <p><b>Phone:</b> {{contact.phone}}</p>
+            <p><b>Email:</b> {{contact.email}}</p>
+          </div>
         </div>
       </div>
     </div>
