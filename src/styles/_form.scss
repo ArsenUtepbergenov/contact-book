@@ -4,6 +4,10 @@
     flex-direction: column;
     color: var(--primary-text);
   }
+  &__row {
+    margin: 8px auto;
+    display: inline-flex;
+  }
   &__input-group {
     margin: 8px;
   }

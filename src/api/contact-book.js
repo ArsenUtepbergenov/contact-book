@@ -1,4 +1,4 @@
-import { db, storage } from '../firebase/firebase'
+import { firebase, db, storage } from '../firebase/firebase'
 
 async function fetchContacts () {
   try {
@@ -34,9 +34,21 @@ async function deleteContact (id) {
   }
 }
 
-async function updateContact (id, book) {
+async function deleteField (id, field) {
   try {
-    await db.collection('contacts').doc(id).update(book)
+    const doc = db.collection('contacts').doc(id)
+    doc.update({
+      [field]: firebase.firestore.FieldValue.delete()
+    })
+    console.log(`The ${field} with id ${id}, successfully deleted!`)
+  } catch (error) {
+    console.error(`Error: cannot delete the ${field} with id - ${id}: `, error)
+  }
+}
+
+async function updateContact (id, data) {
+  try {
+    await db.collection('contacts').doc(id).update(data)
     console.log(`The contact with id ${id}, successfully updated!`)
   } catch (error) {
     console.error(`Error: cannot update the contact with id - ${id}: `, error)
@@ -69,5 +81,6 @@ export {
   deleteContact,
   updateContact,
   createContact,
-  deleteImg
+  deleteImg,
+  deleteField
 }

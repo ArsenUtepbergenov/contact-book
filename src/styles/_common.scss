@@ -43,3 +43,25 @@
   width: 60px;
   height: 60px;
 }
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.red {
+  color: var(--light-red);
+  &:hover {
+    color: var(--primary-red);
+  }
+}
+
+.green {
+  color: var(--light-green);
+  &:hover {
+    color: var(--primary-green);
+  }
+}
+
+.m-1 {
+  margin: 6px;
+}

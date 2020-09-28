@@ -2,7 +2,7 @@
   <section class="contacts">
     <Modal v-if="showModal" @close="toggleModal">
       <template #body>
-        <CreateUpdateForm
+        <CreateForm
           @submit="newData => createContact(newData)"
           textSubmitButton="Create contact" />
       </template>
@@ -29,7 +29,7 @@
 import { fetchContacts, createContact } from '../api/contact-book'
 import Card from '../components/Card'
 import Modal from '../components/Modal'
-import CreateUpdateForm from '../components/CreateUpdateForm'
+import CreateForm from '../components/CreateForm'
 
 export default {
   name: 'Contacts',
@@ -58,7 +58,7 @@ export default {
   components: {
     Card,
     Modal,
-    CreateUpdateForm
+    CreateForm
   }
 }
 </script>

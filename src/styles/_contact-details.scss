@@ -13,12 +13,24 @@
   &__avatar {
     width: 280px;
     height: 100%;
-    text-transform: capitalize;
   }
   &__avatar,
   &__info {
     display: flex;
     flex-direction: column;
     margin: 10px;
+  }
+  &__info {
+    flex-grow: 1;
+    .fas { cursor: pointer; }
+  }
+  &__delete {
+    margin-left: 5px;
+  }
+  // modificators
+  &--btn-add {
+    padding: 7px;
+    border-radius: 4px;
+    margin: 0;
   }
 }

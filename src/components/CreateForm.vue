@@ -1,7 +1,7 @@
 // The form component [creates/updates] a contact
 
 <template>
-  <div class="">
+  <div>
     <form class="form" @submit.prevent="updateContact">
       <div class="form__content">
         <div class="form__input-group">
@@ -55,7 +55,7 @@
           <img v-if="imgUrl" :src="imgUrl" :alt="imgFileName" class="card__img">
         </div>
         <div class="form__input-group">
-          <div class="">
+          <div>
             <button type="button" class="btn form__btn" @click="$refs.inputImg.click()">
               Donwload
             </button>

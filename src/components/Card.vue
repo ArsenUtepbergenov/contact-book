@@ -1,18 +1,10 @@
 <template>
   <div class="card box">
-    <Modal v-if="showModal" @close="toggleModal">
-      <template #body>
-        <div class="text-center" v-html="`<strong>Are you sure you want to delete the <mark>${data.name}</mark>?</strong>`"></div>
-      </template>
-      <template #footer>
-        <button type="button" class="btn modal__btn modal--red" @click="deleteContact">
-          Yes
-        </button>
-        <button type="button" class="btn modal__btn modal--green" @click="toggleModal">
-          Cancel
-        </button>
-      </template>
-    </Modal>
+    <AlertModal
+      :visible="showModal"
+      :mark="data.name"
+      @handleOk="deleteContact"
+      @close="toggleModal" />
     <router-link class="card__link" :to="{ name: 'ContactDetails', params: { id: data.id } }">
       <div class="card__img">
         <img v-if="data.avatar" class="card__avatar" :src="data.avatar" :alt="data.name">
@@ -26,11 +18,11 @@
     </router-link>
     <div class="card__footer">
       <div class="card__controls">
-        <router-link class="card__btn-control card--green" :to="{ name: 'ContactDetails', params: { id: data.id } }">
+        <router-link class="card__btn-control green" :to="{ name: 'ContactDetails', params: { id: data.id } }">
           <i class="fas fa-edit"></i>
         </router-link>
         <span class="card__vertical-delimiter" />
-        <button type="button" class="card__btn-control card--red" @click="toggleModal">
+        <button type="button" class="card__btn-control red" @click="toggleModal">
           <i class="fas fa-trash"></i>
         </button>
       </div>
@@ -39,7 +31,7 @@
 </template>
 
 <script>
-import Modal from '../components/Modal'
+import AlertModal from '../components/AlertModal'
 import { deleteContact, deleteImg } from '../api/contact-book'
 import { isEmpty } from '../utils/utils'
 
@@ -70,7 +62,7 @@ export default {
     }
   },
   components: {
-    Modal
+    AlertModal
   }
 }
 </script>

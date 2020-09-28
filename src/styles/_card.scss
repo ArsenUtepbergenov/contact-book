@@ -60,7 +60,6 @@ $size-gap: 8px;
     border: 0;
     font-size: 1.4em;
     padding: 4px 20px;
-    color: var(--primary-dark-grey);
   }
   &__vertical-delimiter {
     width: 1px;
@@ -69,18 +68,5 @@ $size-gap: 8px;
   // hover
   &:hover {
     box-shadow: 0px 0px 2px 4px var(--primary-grey);
-  }
-  // modificators
-  &--red {
-    color: var(--light-red);
-    &:hover {
-      color: var(--primary-red);
-    }
-  }
-  &--green {
-    color: var(--light-green);
-    &:hover {
-      color: var(--primary-green);
-    }
   }
 }
